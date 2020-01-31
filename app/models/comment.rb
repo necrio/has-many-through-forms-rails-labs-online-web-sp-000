@@ -7,10 +7,10 @@ class Comment < ActiveRecord::Base
     user_attributes.values.each do |user_attributes|
       if user_attributes[:username].present?
         user = User.find_or_create_by(user_attributes)
-        if !self.user = user 
+        if !self.user = user
           self.build_user(:username => user[:username])
-        end 
-      end 
-    end 
-  end 
+        end
+      end
+    end
+  end
 end
